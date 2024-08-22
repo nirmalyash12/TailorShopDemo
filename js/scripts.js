@@ -20,7 +20,6 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             navbarCollapsible.classList.add('navbar-shrink')
         }
-
     };
 
     // Shrink the navbar 
@@ -66,9 +65,39 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Handle review text expansion
     document.querySelectorAll('.review-text').forEach(function(review) {
         review.addEventListener('click', function() {
             this.classList.toggle('expanded');
         });
-    });    
+    });
+
+    // Dynamically add images to the carousel
+    const images = [
+        'assets/img/review-1.jpg',
+        'assets/img/review-2.jpg',
+        'assets/img/review-3.jpg',
+        'assets/img/review-4.jpg',
+    ];
+
+    const carouselInner = document.querySelector('.carousel-inner');
+
+    if (carouselInner) {
+        images.forEach((imageSrc, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            if (index === 0) {
+                carouselItem.classList.add('active');
+            }
+
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.classList.add('d-block', 'w-100');
+            img.alt = `Gallery image ${index + 1}`;
+
+            carouselItem.appendChild(img);
+            carouselInner.appendChild(carouselItem);
+        });
+    }
 });
+
