@@ -35,17 +35,31 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             rootMargin: '0px 0px -40%',
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const navbarCollapse = document.body.querySelector('#navbarResponsive');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
-    responsiveNavItems.map(function (responsiveNavItem) {
+
+    function toggleNavbar() {
+        const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+        navbarToggler.setAttribute('aria-expanded', !isExpanded);
+        navbarCollapse.classList.toggle('show');
+    }
+
+    // Set up event listener for the toggler
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', toggleNavbar);
+    }
+
+    // Set up event listener for responsive nav items
+    responsiveNavItems.forEach(function (responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
+                toggleNavbar();
             }
         });
     });
@@ -74,10 +88,18 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Dynamically add images to the carousel
     const images = [
-        'assets/img/review-1.jpg',
-        'assets/img/review-2.jpg',
-        'assets/img/review-3.jpg',
-        'assets/img/review-4.jpg',
+        'assets/img/1.jpg',
+        'assets/img/2.jpg',
+        'assets/img/3.jpg',
+        'assets/img/4.jpg',
+        'assets/img/5.jpg',
+        'assets/img/6.jpg',
+        'assets/img/7.jpg',
+        'assets/img/8.jpg',
+        'assets/img/9.jpg',
+        'assets/img/10.jpg',
+        'assets/img/11.jpg',
+        'assets/img/12.jpg',
     ];
 
     const carouselInner = document.querySelector('.carousel-inner');
@@ -99,5 +121,20 @@ window.addEventListener('DOMContentLoaded', event => {
             carouselInner.appendChild(carouselItem);
         });
     }
-});
 
+
+    document.addEventListener('click', function (event) {
+        if (navbarCollapse.classList.contains('show') && !navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+            toggleNavbar();
+        }
+    });
+
+    const menuButton = document.getElementById('#menu-button')
+    
+    menuButton.addEventListener('click', function (event) {
+        if (navbarCollapse.classList.contains('show') && !navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+            toggleNavbar();
+        }
+    });
+
+});
