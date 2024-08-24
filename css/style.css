@@ -11513,7 +11513,7 @@ body {
 }
 
 .about-section .img-fluid {
-  max-width: 330px;
+  max-height: 500px;
   height: auto;
   border-radius: 5px;
 }
@@ -11577,12 +11577,12 @@ body {
 .carousel-inner {
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .carousel-inner img {
-  max-width: 50%;
+  max-width: 400px;
   height: auto;
   object-fit: cover;
-  /* margin: auto; */
+  margin-left: 100px;
+  align-items: center;
 }
