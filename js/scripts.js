@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', event => {
         'assets/img/12.jpg',
     ];
 
-    const carouselInner = document.querySelector('.carousel-inner');
+    const carouselInner = document.querySelector('.carousel-images');
 
     if (carouselInner) {
         images.forEach((imageSrc, index) => {
@@ -57,4 +57,43 @@ window.addEventListener('DOMContentLoaded', event => {
             carouselInner.appendChild(carouselItem);
         });
     }
+    
+    document.addEventListener('click', function (event) {
+        if (navbarCollapse.classList.contains('show') && !navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+            toggleNavbar();
+        }
+    });
+
+const aboutUsImages = [
+    // 'assets/img/about-us.jpg',
+    'assets/img/aboutus1.jpg',
+    'assets/img/aboutus2.jpg',
+    'assets/img/aboutus3.jpg',
+]
+
+const aboutUsCarouselInner = document.querySelector('.about-us-carousel-images');
+
+if (aboutUsCarouselInner) {
+    aboutUsImages.forEach((imageSrc, index) => {
+        const aboutUsCarouselItem = document.createElement('div');
+        aboutUsCarouselItem.classList.add('carousel-item');
+        if (index === 0) {
+            aboutUsCarouselItem.classList.add('active'); // Set the first item as active
+        }
+
+        const aboutUsImg = document.createElement('img');
+        aboutUsImg.src = imageSrc;
+        aboutUsImg.classList.add('d-block', 'w-100');
+        aboutUsImg.alt = `About Us Gallery image ${index + 1}`;
+
+        aboutUsCarouselItem.appendChild(aboutUsImg);
+        aboutUsCarouselInner.appendChild(aboutUsCarouselItem);
+    });
+}
+
+document.addEventListener('click', function (event) {
+    if (navbarCollapse.classList.contains('show') && !navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
+        toggleNavbar();
+    }
+});
 });
