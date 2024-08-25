@@ -32,6 +32,18 @@ window.addEventListener('DOMContentLoaded', event => {
         'assets/img/10.jpg',
         'assets/img/11.jpg',
         'assets/img/12.jpg',
+        'assets/img/13.jpg',
+        'assets/img/14.jpg',
+        'assets/img/15.jpg',
+        'assets/img/16.jpg',
+        'assets/img/17.jpg',
+        'assets/img/18.jpg',
+        'assets/img/19.jpg',
+        'assets/img/20.jpg',
+        'assets/img/21.jpg',
+        'assets/img/22.jpg',
+
+
     ];
 
     const carouselInner = document.querySelector('.carousel-images');
@@ -59,6 +71,8 @@ window.addEventListener('DOMContentLoaded', event => {
         'assets/img/aboutus1.jpg',
         'assets/img/aboutus2.jpg',
         'assets/img/aboutus3.jpg',
+        'assets/img/aboutus4.jpg',
+        'assets/img/aboutus5.jpg',
     ];
 
     const aboutUsCarouselInner = document.querySelector('.about-us-carousel-images');
