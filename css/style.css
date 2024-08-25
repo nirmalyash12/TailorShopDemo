@@ -10998,7 +10998,7 @@ body {
   padding: 0.9rem 0;
 }
 #mainNav .navbar-nav .nav-item:hover {
-  color: fade(#fff, 80%);
+  color: fade(#000, 80%);
   outline: none;
   background-color: transparent;
 }
@@ -11101,7 +11101,7 @@ body {
 }
 @media (min-width: 992px) {
   .masthead {
-    margin-top: 85px;
+    /* margin-top: 85px; */
     height: 100vh;
     padding: 0;
   }
@@ -11425,7 +11425,7 @@ body {
 
 
 .masthead {
-  margin-top: 100px;
+  margin-top: 70px;
   position: relative;
   width: 100%;
   height: auto;
@@ -11566,15 +11566,31 @@ body {
   font-size: 1.1rem;
 }
 
-.about-us-carousel-images img {
-  max-width: 350px;
+.gallery-section {
+  padding: 60px 0;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.carousel-images {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-images img {
+  max-width: 400px;
   height: auto;
   object-fit: cover;
   margin: auto;
 }
 
-.carousel-item img{
-  max-height: auto;
-  max-width: 400px;
-  ali
+.about-us-carousel-images img {
+  max-width: 350px;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
 }
