@@ -11566,31 +11566,15 @@ body {
   font-size: 1.1rem;
 }
 
-.gallery-section {
-  padding: 60px 0;
-}
-
-.gallery-section h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-.carousel-images {
-  display: flex;
-  align-items: center;
-}
-
-.carousel-images img {
-  max-width: 400px;
-  height: auto;
-  object-fit: cover;
-  margin: auto;
-}
-
 .about-us-carousel-images img {
   max-width: 350px;
   height: auto;
   object-fit: cover;
   margin: auto;
+}
+
+.carousel-item img{
+  max-height: auto;
+  max-width: 400px;
+  ali
 }
